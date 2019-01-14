@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 #
@@ -61,3 +61,23 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init - zsh)"
+export PIPENV_VENV_IN_PROJECT=1
+export PATH=~/.local/bin:$PATH
+export PATH=$PATH:/Users/atsushi/.nodebrew/current/bin
+# export PATH=$PATH:./node_modules/.bin
+
+# GNU Command Path
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
